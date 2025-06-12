@@ -1,6 +1,6 @@
 # AI SDK Slackbot
 
-An AI-powered chatbot for Slack powered by the [AI SDK by Vercel](https://ai-sdk.dev/docs/guides/slackbot).
+An AI-powered chatbot for Slack followed the tutorial of [AI SDK by Vercel](https://ai-sdk.dev/docs/guides/slackbot).
 
 ## Features
 
@@ -24,5 +24,8 @@ The bot maintains context within both threads and direct messages, so it can fol
 ### Available Tools
 
 1. **Web Sources**: The bot can search the web for up-to-date information using [Tavily](https://www.tavily.com/).
+
    - Example: "What's the price of BTC today?"
-# slackbot-tool
+
+2. **Get Weather**: The bot will add the weather of any destinations to the answer.
+   - Example: "Trip to Shanghai"
