@@ -17,7 +17,7 @@ An AI-powered chatbot for Slack followed the tutorial of [AI SDK by Vercel](http
 The bot will respond to:
 
 1. Direct messages - Send a DM to your bot
-2. Mentions - Mention your bot in a channel using `@YourBotName`
+2. Mentions - Mention your bot in a channel using `@YourSlackBotName`
 
 The bot maintains context within both threads and direct messages, so it can follow along with the conversation.
 
