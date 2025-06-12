@@ -1,4 +1,4 @@
-import { CoreMessage, generateText, tool } from "ai";
+import { CoreMessage, generateText, streamText, tool } from "ai";
 import { createDeepSeek } from "@ai-sdk/deepseek";
 import { tavily } from "@tavily/core";
 import dotenv from "dotenv";
@@ -84,17 +84,17 @@ export const generateResponse = async (
       model: deepseek("deepseek-chat"),
       system: `You are a Slack bot assistant. Keep responses concise.
           - Current date: ${new Date().toISOString().split("T")[0]}
-          - If the user's question is about trends, forecasts, or recent developments (e.g. "AI trends", "latest in healthcare AI"), you MUST use the "webSources" tool immediately. You must ALWAYS include all results in the response, in this format:
+          - If the user's question is about trends, forecasts, resources about some topics (e.g. "music", "learning", "trend") or recent developments (e.g. "AI trends", "latest in healthcare AI"), you MUST use the "webSources" tool immediately. You must ALWAYS include all results in the response, in this format:
           
           [Your main answer here]
 
           ==================================================
 
           Related topics:
+          [Tavily tool answer here]
           
           ==================================================
           - When the user asks anything related to travel, trips, or cities (e.g. "trip to Shanghai", "visiting Paris"), ALWAYS use the "getWeather" tool to include the current weather. Do not guess or skip the weather. Always call the tool, even if the destination is obvious.
-          - When the user asks to summarize any URL (e.g. "help me summarize this page", "summarize this url"). ALWAYS use the "summarizeUrl" tool.
           - Format sources as title in the response instead of metadata title`,
       messages,
       maxTokens: 1000,
