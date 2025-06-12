@@ -1,0 +1,7 @@
+.env
+.vercel
+
+index.js
+tavily.js
+
+node_modules
